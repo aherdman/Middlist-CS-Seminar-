@@ -1,0 +1,62 @@
+<html>
+
+
+
+<div class="=page-header"> 
+<h1>User Registration</h1>
+</div>
+
+<form name= "regForm" ng-submit="register.regUser(regData);" novalidate>
+
+	<label>Name:</label>
+	<input class="form-control" type="text" name="firstname" placeholder="Please enter your full name"
+	 ng-model="register.regData.name">
+	 
+	<br>
+
+	<label>Email:</label>
+	<input class="form-control" type="text" name="email" onchange="sendEmail(this.value)" placeholder="Please enter your Middlebury Email with 1 number, symbol, capital letter at least 8 characters in length" id="email-reg"
+	 ng-model="register.regData.email">
+	 <script src="http://smtpjs.com/smtp.js">
+</script>
+	<br>
+	<label>Password:</label>
+	<input class="form-control" type="password" name="password" id="pw-reg" placeholder="please enter password" ng-model="register.regData.password">
+	<!-- <br>
+	<label>re-enter:</label>
+	<input class="form-control" type="password" name="password" placeholder="please enter password" ng-model="register.regData.password">
+	<br> -->
+	<button  class="btn btn-primary" type="submit" onclick="register()" >Register</button>
+
+	<span id="msg-reg"></span>
+
+
+
+</form>
+
+<div>
+		<span> {{regFrom}}</span>
+</div>
+
+
+
+
+
+
+<br>
+
+<div class="row show-hide-message" ng-show="register.successMsg">
+<div class=" alert alert-success"> {{register.successMsg}}</div>
+	
+</div>
+
+<div class="row show-hide-message" ng-show="register.errorsMsg">
+<div class=" alert alert-danger"> {{register.errorsMsg}}</div>
+	
+</div>
+
+<div>
+	
+</div>
+</html>
+	

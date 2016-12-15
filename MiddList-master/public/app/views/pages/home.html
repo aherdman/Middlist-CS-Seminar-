@@ -1,0 +1,88 @@
+
+<body id="sellstyle">
+  <div class="=page-header"> 
+  <h1>Post Your Item:</h1>
+   </div>
+
+  <form name= "sellForm" ng-submit="listController.sellItem(sellData);" >
+    <label>Title:</label>
+    <input class="form-control" type="text" name="title" placeholder="title"
+     ng-model="listController.sellData.title"></br>
+
+     <label id="label1"> Preferred Email:</label>
+    <input class="form-control" type="text" name="poster" placeholder="john_jacob@jingleheimer.smith"
+     ng-model="listController.sellData.poster"></br>
+
+       <label id="label1"> Price:</label>
+    <input class="form-control" type="Number" name="price" placeholder="# of dollars"
+     ng-model="listController.sellData.price"></br>
+
+
+       <label id="label1">Location: </label>
+    <input class="form-control" type="text" name="price" placeholder="ex: Gifford Hall"
+     ng-model="listController.sellData.location"></br>
+
+      <div class= "form-group row">
+            <label id="label1"> Today's Date: </label>
+        <input type="date" id="date" name="todaysDate" date-format="MM-dd-yyyy" ng-model="listController.sellData.date"/>
+      </div></br>
+
+
+
+      <div class= "form-group row">
+        <label id="label1" for="location"> Condition:</label>
+        <input type="radio" name="condition" id="condition" value="Excellent" ng-model= "listController.sellData.condition"> Excellent
+        <input type="radio" name="condition" value="Good" id="condition" ng-model= "listController.sellData.condition"> Good
+        <input type="radio" name="condition" value="Fair" id="condition" ng-model= "listController.sellData.condition"> Fair
+        <input type="radio" name="condition" value="Poor"  id="condition" ng-model= "listController.sellData.condition"> Poor
+      </div></br>
+      
+      <div class= "form-group row" id="Category">
+        <label id="label1" for="location"> Category:</label>
+        <input type="radio" id="cat1" name="category" value="Electronics" ng-model="listController.sellData.category"> Electronics
+        <input type="radio" id="cat2" name="category" value="Furniture" ng-model="listController.sellData.category"> Furniture
+        <input type="radio" id="cat3" name="category" value="Textbook" ng-model="listController.sellData.category"> Textbook
+        <input type="radio" id="cat4" name="category" value="School Supplies" ng-model="listController.sellData.category"> School Supplies
+        <input type="radio" id="cat5" name="category" value="Clothing" ng-model="listController.sellData.category"> Clothing
+        <input type="radio" id="cat6" name="category" value="Vehicle" ng-model="listController.sellData.category"> Vehicle 
+        <input type="radio" id="cat6" name="category" value="Miscellaneous" ng-model="listController.sellData.category"> Miscellaneous    
+      </div></br>
+
+      <label id="label3" for="description" class="col-sm-1 col-form-label" >Description and Notes:</label>
+        <div class="col-sm-11">
+          <textarea  rows="5" cols="50" style="resize:none" id="description" ng-model="listController.sellData.description">
+        </textarea>
+        </div></br>
+
+    <button class="btn btn-primary" type="submit" ng-click="Submit()">Submit</button>
+
+
+
+  </form>
+
+  <div>
+   
+  </div>
+
+
+
+
+
+
+  <br>
+
+  <div class="row show-hide-message" ng-show="listController.successMsg">
+  <div class=" alert alert-success"> {{listController.successMsg}}</div>
+    
+  </div>
+
+  <div class="row show-hide-message" ng-show="listController.errorsMsg">
+  <div class=" alert alert-danger"> {{listController.errorsMsg}}</div>
+    
+  </div>
+
+  <div>
+    
+  </div>
+</body>
+
